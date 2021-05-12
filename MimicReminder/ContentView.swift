@@ -9,6 +9,15 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    // Customize NavigationBarTitile Color
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
+
+        //Use this if NavigationBarTitle is with displayMode = .inline
+//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.systemRed]
+    }
+    
     @Environment(\.managedObjectContext) var moc
 
     @FetchRequest(entity: Todoitem.entity(), sortDescriptors: []) var todoitems: FetchedResults<Todoitem>
@@ -17,16 +26,35 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
+            VStack {
+                List {
+                    ForEach(todoitems, id: \.self) { item in
+                        Text(item.title ?? "Undefined Reminder")
+                    }
+                }
                 
+                Button(action: { self.showingNewItemSheet.toggle()}) {
+                    HStack {
+                        Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        
+                        Text("New Reminder")
+                        
+                        Spacer()
+                    }
+                    .padding()
+                    .accentColor(Color(UIColor.systemRed))
+                    .frame(alignment: .leading)
+                }
             }
-            .navigationTitle("Reminder")
-            .navigationBarItems(trailing: Button(action: { self.showingNewItemSheet.toggle()
-            }) {
-                Image(systemName: "plus")
-            })
+            .navigationTitle("Reminders")
+//            .navigationBarItems(trailing: Button(action: { self.showingNewItemSheet.toggle()
+//            }) {
+//                Image(systemName: "plus")
+//            })
             .sheet(isPresented: $showingNewItemSheet) {
-                Text("Need to add things")
+                AddNewTodoView()
             }
         }
         

@@ -13,7 +13,7 @@
 		AA81BED0264ACF5E00493C3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA81BECF264ACF5E00493C3A /* Preview Assets.xcassets */; };
 		AA81BED2264ACF5E00493C3A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81BED1264ACF5E00493C3A /* Persistence.swift */; };
 		AA81BED5264ACF5E00493C3A /* MimicReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA81BED3264ACF5E00493C3A /* MimicReminder.xcdatamodeld */; };
-		AA81BEDD264AD46C00493C3A /* AddNewTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81BEDC264AD46C00493C3A /* AddNewTodo.swift */; };
+		AA81BEDD264AD46C00493C3A /* AddNewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81BEDC264AD46C00493C3A /* AddNewTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		AA81BED1264ACF5E00493C3A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		AA81BED4264ACF5E00493C3A /* MimicReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MimicReminder.xcdatamodel; sourceTree = "<group>"; };
 		AA81BED6264ACF5E00493C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA81BEDC264AD46C00493C3A /* AddNewTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTodo.swift; sourceTree = "<group>"; };
+		AA81BEDC264AD46C00493C3A /* AddNewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				AA81BED6264ACF5E00493C3A /* Info.plist */,
 				AA81BED3264ACF5E00493C3A /* MimicReminder.xcdatamodeld */,
 				AA81BECE264ACF5E00493C3A /* Preview Content */,
-				AA81BEDC264AD46C00493C3A /* AddNewTodo.swift */,
+				AA81BEDC264AD46C00493C3A /* AddNewTodoView.swift */,
 			);
 			path = MimicReminder;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 				AA81BECB264ACF5D00493C3A /* ContentView.swift in Sources */,
 				AA81BEC9264ACF5D00493C3A /* MimicReminderApp.swift in Sources */,
 				AA81BED5264ACF5E00493C3A /* MimicReminder.xcdatamodeld in Sources */,
-				AA81BEDD264AD46C00493C3A /* AddNewTodo.swift in Sources */,
+				AA81BEDD264AD46C00493C3A /* AddNewTodoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
