@@ -13,7 +13,7 @@ struct AddNewTodoView: View {
     
     @State private var title = ""
     @State private var note = ""
-    @State private var priority: Int16 = 0
+    @State private var priority = 0
     @State private var duedate = Date()
     
     let priorities = ["None", "Low", "Medium", "High"]
@@ -30,6 +30,7 @@ struct AddNewTodoView: View {
                             Text(priorities[$0])
                         }
                     }
+//                    .pickerStyle(SegmentedPickerStyle())
                 }
                 
                 Section {
@@ -38,9 +39,7 @@ struct AddNewTodoView: View {
                 }
                 
                 Section(header: Text("Due Date")) {
-                    DatePicker(selection: $duedate) {
-                        Text("Select a date")
-                    }
+                    DatePicker("Select a date", selection: $duedate, in: Date()..., displayedComponents: [.date])
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .frame(maxHeight: 400)
                 }
@@ -59,7 +58,7 @@ struct AddNewTodoView: View {
     func SaveTodo() {
         let newTodo = Todoitem(context: self.moc)
         newTodo.title = self.title
-        newTodo.priority = self.priority
+        newTodo.priority = Int16(self.priority)
         newTodo.note = self.note
         newTodo.duedate = self.duedate
         

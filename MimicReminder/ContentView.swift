@@ -29,8 +29,27 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(todoitems, id: \.self) { item in
-                        Text(item.title ?? "Undefined Reminder")
+                        HStack {
+                            if item.priority > 0 {
+                                Text(priorityMark(priority: item.priority))
+                                    .foregroundColor(.red)
+                            }
+                        
+                            Text(item.title ?? "Undefined Reminder")
+                            
+                            Spacer()
+                            Button(action: {
+                                NavigationLink(
+                                    destination: Text("Destination"),
+                                    label: {
+                                        Text("Navigate")
+                                    })
+                            }) {
+                                Image(systemName: "pencil.circle")
+                            }
+                        }
                     }
+                    .onDelete(perform: DeleteItem)
                 }
                 
                 Button(action: { self.showingNewItemSheet.toggle()}) {
@@ -59,7 +78,29 @@ struct ContentView: View {
         }
         
     }
-
+    
+    func DeleteItem(at offsets: IndexSet) {
+        for offset in offsets {
+            let item = todoitems[offset]
+            
+            moc.delete(item)
+        }
+        
+        try? moc.save()
+    }
+    
+    func priorityMark(priority: Int16) -> String {
+        switch priority {
+        case 1:
+            return "!"
+        case 2:
+            return "!!"
+        case 3:
+            return "!!!"
+        default:
+            return ""
+        }
+    }
 
 }
 
