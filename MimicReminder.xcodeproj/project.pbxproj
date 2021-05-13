@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3876F2264CE3AF008B21B1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3876F1264CE3AF008B21B1 /* DetailView.swift */; };
 		AA81BEC9264ACF5D00493C3A /* MimicReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81BEC8264ACF5D00493C3A /* MimicReminderApp.swift */; };
 		AA81BECB264ACF5D00493C3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81BECA264ACF5D00493C3A /* ContentView.swift */; };
 		AA81BECD264ACF5E00493C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA81BECC264ACF5E00493C3A /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA3876F1264CE3AF008B21B1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AA81BEC5264ACF5D00493C3A /* MimicReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MimicReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA81BEC8264ACF5D00493C3A /* MimicReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimicReminderApp.swift; sourceTree = "<group>"; };
 		AA81BECA264ACF5D00493C3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				AA81BEC8264ACF5D00493C3A /* MimicReminderApp.swift */,
 				AA81BECA264ACF5D00493C3A /* ContentView.swift */,
+				AA3876F1264CE3AF008B21B1 /* DetailView.swift */,
 				AA81BECC264ACF5E00493C3A /* Assets.xcassets */,
 				AA81BED1264ACF5E00493C3A /* Persistence.swift */,
 				AA81BED6264ACF5E00493C3A /* Info.plist */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA81BED2264ACF5E00493C3A /* Persistence.swift in Sources */,
+				AA3876F2264CE3AF008B21B1 /* DetailView.swift in Sources */,
 				AA81BECB264ACF5D00493C3A /* ContentView.swift in Sources */,
 				AA81BEC9264ACF5D00493C3A /* MimicReminderApp.swift in Sources */,
 				AA81BED5264ACF5E00493C3A /* MimicReminder.xcdatamodeld in Sources */,

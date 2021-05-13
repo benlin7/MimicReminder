@@ -23,7 +23,8 @@ struct ContentView: View {
     @FetchRequest(entity: Todoitem.entity(), sortDescriptors: []) var todoitems: FetchedResults<Todoitem>
     
     @State private var showingNewItemSheet = false
-
+    @State private var bindingItemTitle = ""
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -31,22 +32,25 @@ struct ContentView: View {
                     ForEach(todoitems, id: \.self) { item in
                         HStack {
                             if item.priority > 0 {
-                                Text(priorityMark(priority: item.priority))
-                                    .foregroundColor(.red)
+                                Image(systemName: priorityMark(priority: item.priority))
+                                    .foregroundColor(.orange)
                             }
-                        
+                            
                             Text(item.title ?? "Undefined Reminder")
                             
+//                            bindingItemTitle = item.title ?? "todo title"
+//
+//                            TextField("Todo Title", text: $bindingItemTitle)
+                            
+                            
                             Spacer()
-                            Button(action: {
-                                NavigationLink(
-                                    destination: Text("Destination"),
-                                    label: {
-                                        Text("Navigate")
-                                    })
-                            }) {
-                                Image(systemName: "pencil.circle")
-                            }
+                            
+                            
+                            Image(systemName: "info.circle")
+                                .foregroundColor(.orange)
+                                .onTapGesture {
+                                    self.showingNewItemSheet.toggle()
+                                }
                         }
                     }
                     .onDelete(perform: DeleteItem)
@@ -92,11 +96,11 @@ struct ContentView: View {
     func priorityMark(priority: Int16) -> String {
         switch priority {
         case 1:
-            return "!"
+            return "exclamationmark"
         case 2:
-            return "!!"
+            return "exclamationmark.2"
         case 3:
-            return "!!!"
+            return "exclamationmark.3"
         default:
             return ""
         }
@@ -109,6 +113,13 @@ struct ContentView_Previews: PreviewProvider {
     static let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, moc)
+        
+//        let item = Todoitem(context: moc)
+//        item.title = "sample todo"
+//        item.priority = 2
+//        item.duedate = Date()
+//        item.note = "some note"
+        
+        return ContentView().environment(\.managedObjectContext, moc)
     }
 }
